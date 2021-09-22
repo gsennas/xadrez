@@ -18,5 +18,6 @@ namespace xadrez.tabuleiro
             QrMovimento = 0;
             Tabuleiro = tabuleiro;
         }
+        
     }
 }
