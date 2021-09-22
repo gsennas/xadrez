@@ -8,7 +8,12 @@ namespace xadrez
     {
         static void Main(string[] args)
         {
-            try
+
+            PosicaoXadrez pos = new PosicaoXadrez('c', 7);
+            Console.WriteLine( pos);
+            Console.WriteLine(pos.toPosicao());
+            
+            /*try
             {
                 Tabuleiro tabuleiro = new Tabuleiro(8, 8);// instanciar matriz = null em todos os elementos
                 tabuleiro.ColocarPeca(new Torre(Cor.Preta, tabuleiro), new Posicao(0, 9));
@@ -22,7 +27,7 @@ namespace xadrez
             catch (TabuleiroExeption e)
             {
                 Console.WriteLine(e.Message);
-            }
+            }*/
             }
 
 

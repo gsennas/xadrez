@@ -51,7 +51,7 @@ namespace xadrez.tabuleiro
         {
             if (!PosicaoValilda(pos))
             {
-                throw new TabuleiroExeption("Posicao Invalida");
+                throw new TabuleiroExeption("Posicao Invalida!");
             }
             
         }
