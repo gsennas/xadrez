@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using xadrez.tabuleiro;
+using xadrez.Xadrez;
 
 namespace xadrez
 {
@@ -31,7 +32,7 @@ namespace xadrez
             Console.WriteLine("  a b c d e f g h");
 
         }
-            public static void ImprimirPeca(Peca peca)
+            public static void ImprimirPeca(Peca peca) //cor da peca
             {
                 if (peca.Cor == Cor.branca)
                 {
@@ -46,6 +47,13 @@ namespace xadrez
 
                 }
             }
+       public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
+        }
 
         }
     } 

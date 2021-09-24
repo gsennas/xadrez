@@ -8,15 +8,19 @@ namespace xadrez.tabuleiro
     {
         public Posicao Posicao { get; set; }
         public Cor Cor { get; set; }
-        public int QrMovimento { get; protected set; }
+        public int QtMovimento { get; protected set; }
         public Tabuleiro Tabuleiro { get; protected set; }
 
         public Peca( Cor cor,  Tabuleiro tabuleiro)
         {
             Posicao = null;
             Cor = cor;
-            QrMovimento = 0;
+            QtMovimento = 0;
             Tabuleiro = tabuleiro;
+        }
+        public void InQtMovimentos()
+        {
+            QtMovimento++;
         }
         
     }
