@@ -21,8 +21,11 @@ namespace xadrez
                 {
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.tab);
-                    Console.WriteLine("Origem");
+                    Console.WriteLine("\nOrigem");
                     Posicao origem = Tela.LerPosicaoXadrez().toPosicao();
+                    Console.Clear();
+                    bool[,] posicoesPossiveis = partida.tab.Peca(origem).MovimentoPossivel();
+                    Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
                     Console.WriteLine("Destino");
                     Posicao destino = Tela.LerPosicaoXadrez().toPosicao();
                     partida.ExecutaMovimento(origem, destino);

@@ -5,14 +5,14 @@ using xadrez.tabuleiro;
 
 namespace xadrez.Xadrez
 {
-    class Bispo : Peca
+    class Piao : Peca
     {
-        public Bispo(Cor cor, Tabuleiro tabuleiro) : base(cor, tabuleiro)
+        public Piao(Cor cor, Tabuleiro tabuleiro) : base(cor, tabuleiro)
         {
         }
         public override string ToString()
         {
-            return "B";
+            return "R";
         }
         private bool PodeMover(Posicao pos)
         {
