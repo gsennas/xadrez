@@ -6,7 +6,7 @@ namespace xadrez.tabuleiro
 {
     enum Cor
     {
-        branca,
-        Preta
+        Brancas,
+        Pretas
     }
 }
