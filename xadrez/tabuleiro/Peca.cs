@@ -10,7 +10,7 @@ namespace xadrez.tabuleiro
         public Cor Cor { get; set; }
         public int QtMovimento { get; protected set; }
         public Tabuleiro Tabuleiro { get; protected set; }
-
+      
         public Peca( Cor cor,  Tabuleiro tabuleiro)
         {
             Posicao = null;
@@ -21,6 +21,10 @@ namespace xadrez.tabuleiro
         public void InQtMovimentos()
         {
             QtMovimento++;
+        }
+        public void DecQtMovimentos()
+        {
+            QtMovimento--;
         }
         public bool ExistemovimentoPossivel()
         {

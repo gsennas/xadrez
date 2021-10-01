@@ -22,9 +22,7 @@ namespace xadrez
                     try
                     {
                         Console.Clear();
-                        Tela.ImprimirTabuleiro(partida.tab);
-                        Console.WriteLine("\nTurno:" + partida.Turno);
-                        Console.WriteLine("Jogam as:" + partida.JogadorAtual);
+                        Tela.ImprimirPartida(partida);
                         Console.WriteLine("\nOrigem");
                         Posicao origem = Tela.LerPosicaoXadrez().toPosicao();
                         partida.ValidarPosicaoOrigem(origem);
@@ -42,6 +40,9 @@ namespace xadrez
                         Console.ReadLine();
                     }
                 }
+                Tela.ImprimirPartida(partida);
+
+
             }
                
             catch (TabuleiroExeption e)

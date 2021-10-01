@@ -17,7 +17,7 @@ namespace xadrez.Xadrez
         private bool PodeMover(Posicao pos)
         {
             Peca p = Tabuleiro.Peca(pos);
-            return p == null || p.Cor != this.Cor;
+            return p == null || p.Cor != Cor;
         }
         public override bool[,] MovimentoPossivel()
         {

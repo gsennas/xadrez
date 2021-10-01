@@ -25,7 +25,7 @@ namespace xadrez.tabuleiro
             return Pecas[pos.Linha, pos.Coluna];
         }
 
-        public void ColocarPeca(Peca p, Posicao pos)//colocar pecas
+        public void ColocarPeca(Peca p, Posicao pos) //colocar pecas
         {if (ExistePeca(pos))
             {
                 throw new TabuleiroExeption("Ja Existe uma peca nessa posicao!");
@@ -33,7 +33,7 @@ namespace xadrez.tabuleiro
             Pecas[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;
         }
-        public Peca RetirarPeca(Posicao pos)//retirar pecas
+        public Peca RetirarPeca(Posicao pos) //retirar pecas
         {
             if (Peca(pos)==null)
             {

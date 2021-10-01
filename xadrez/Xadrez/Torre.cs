@@ -23,6 +23,7 @@ namespace xadrez.Xadrez
         {
             bool[,] mat = new bool[Tabuleiro.Linhas, Tabuleiro.Colunas];
             Posicao pos = new Posicao(Tabuleiro.Linhas, Tabuleiro.Colunas);
+            
             //acima
             pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
             while (Tabuleiro.PosicaoValilda(pos) && PodeMover(pos))
@@ -43,7 +44,9 @@ namespace xadrez.Xadrez
                 {
                     break;
                 }
-                pos.Coluna = pos.Coluna - 1;
+                pos.Coluna = pos.Coluna - 1; 
+            }
+
                 //Direita
                 pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
                 while (Tabuleiro.PosicaoValilda(pos) && PodeMover(pos))
@@ -67,7 +70,7 @@ namespace xadrez.Xadrez
                     pos.Linha = pos.Linha + 1;
                 }
 
-            }
+            
             return mat;
         }
     }
