@@ -42,7 +42,7 @@ namespace xadrez.tabuleiro
             }
             return false;
         }
-        public bool  PodeMoverPara(Posicao pos)
+        public bool  MovimentoPossivel(Posicao pos)
         {
             return MovimentoPossivel()[pos.Linha,pos.Coluna];
         }

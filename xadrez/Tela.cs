@@ -26,8 +26,8 @@ namespace xadrez
             }
             else 
             {
-                Console.WriteLine("XequeMate");
-                Console.WriteLine(partida.JogadorAtual+"Venceram!!!!1");
+                Console.WriteLine("XequeMate!");
+                Console.WriteLine(partida.JogadorAtual+" Venceram!!!!");
             }
 
         }
