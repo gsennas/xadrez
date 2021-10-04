@@ -31,15 +31,17 @@ namespace xadrez.Xadrez
             Peca p = Tabuleiro.Peca(pos);
             return p == null || p.Cor != this.Cor;
         }
+
         public override bool[,] MovimentoPossivel()
         {
             bool[,] mat = new bool[Tabuleiro.Linhas, Tabuleiro.Colunas];
             Posicao pos = new Posicao(0, 0);
+            Posicao p = new Posicao(pos.Linha - 1, pos.Coluna);
 
             if (Cor == Cor.Brancas)
             {
                 pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
-                if (Tabuleiro.PosicaoValilda(pos) && PodeMover(pos))
+                if (Tabuleiro.PosicaoValilda(pos) && PodeMover(pos) && !ExisteInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }

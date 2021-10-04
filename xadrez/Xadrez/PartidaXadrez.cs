@@ -125,15 +125,53 @@ namespace xadrez.Xadrez
                 }
             }
         }
-
+        public void Promocao(Cor cor, Posicao pos)
+        {
+            Console.Write("Escolha a Peca D, B, C, T");
+            Char peca = char.Parse(Console.ReadLine());
+            if ( peca == 'D' || peca == 'd')
+            {
+                Peca dama = new Dama(cor, tab);
+                tab.ColocarPeca(dama, pos);
+                Pecas.Add(dama);
+            }
+            else if (peca == 'B' || peca == 'b')
+            {
+                Peca bispo = new Bispo(cor, tab);
+                tab.ColocarPeca(bispo, pos);
+                Pecas.Add(bispo);
+            }
+            else if (peca == 'C' || peca == 'c')
+            {
+                Peca cavalo = new Cavalo(cor, tab);
+                tab.ColocarPeca(cavalo, pos);
+                Pecas.Add(cavalo);
+            }
+        }
         public void RealizaJogada(Posicao origem, Posicao destino)
         {
             Peca pecaCapturada = ExecutaMovimento(origem, destino);
+            
             if (EstaemCheque(JogadorAtual))
             {
                 DesfazoMovimento(origem, destino, pecaCapturada);
                 throw new TabuleiroExeption("Voce nao pode se colocar em Xeque");
             }
+            Peca p = tab.Peca(destino);
+
+            //# Promocao
+
+            if (p is Piao)
+            {
+                if (p.Cor == Cor.Brancas && destino.Linha == 0 || p.Cor == Cor.Pretas && destino.Linha == 7)
+                {
+                    p = tab.RetirarPeca(destino);
+                    Pecas.Remove(p);
+                    Promocao(p.Cor, destino);
+
+                }
+            }
+
             if (EstaemCheque(Adversaria(JogadorAtual)))
             {
                 xeque = true;
@@ -152,7 +190,7 @@ namespace xadrez.Xadrez
                 MudaJogador();
             }
 
-            Peca p = tab.Peca(destino);
+            
 
             //#En Passant
 
